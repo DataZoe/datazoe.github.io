@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Eat to Grow</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Single Page Game</p>
+        <h1>Eat to Grow</h1>
+        <p class="subtitle">Eat items, grow bigger, and unlock your upgrade.</p>
+      </div>
+      <div class="hero-actions">
+        <button id="playButton" class="primary-button">Play</button>
+        <button id="restartButton" class="primary-button">Restart game</button>
+      </div>
+    </section>
+
+    <div id="eventBanner" class="event-banner">The Leviathan is coming!</div>
+
+    <section class="game-panel">
+      <div class="canvas-card">
+        <canvas id="gameCanvas" width="760" height="900" aria-label="Bloop growth game"></canvas>
+        <div id="winOverlay" class="win-overlay" aria-hidden="true">
+          <div class="win-card">
+            <h2 id="resultTitle">El Gran Maja Wins!</h2>
+            <p id="resultMessage">Your Bloop became the mighty El Gran Maja and claimed the arena.</p>
+            <button id="overlayRestart" class="primary-button">Play Again</button>
+          </div>
+        </div>
+      </div>
+      <aside class="status-card">
+        <div class="status-group">
+          <div>
+            <span class="label">Form</span>
+            <strong id="formValue">Bloop</strong>
+          </div>
+          <div>
+            <span class="label">Score</span>
+            <strong id="scoreValue">0</strong>
+          </div>
+        </div>
+        <div class="status-group">
+          <div>
+            <span class="label">Size</span>
+            <strong id="sizeValue">16</strong>
+          </div>
+          <div>
+            <span class="label">Goal</span>
+            <strong id="goalValue">Grow to 58 to become El Gran Maja</strong>
+          </div>
+        </div>
+        <div class="message-card">
+          <p id="statusText">Use arrow keys or WASD to move your Bloop around the arena.</p>
+        </div>
+        <div class="instructions">
+          <p><strong>How to play</strong></p>
+          <ul>
+            <li>Move with <span class="keycap">← ↑ → ↓</span> or <span class="keycap">W A S D</span>.</li>
+            <li>Eat smaller glowing items to grow.</li>
+            <li>Reach size <strong>58</strong> to become <em>El Gran Maja</em>.</li>
+            <li>Keep growing after transformation for extra score.</li>
+          </ul>
+        </div>
+        <div class="upload-section">
+          <p><strong>Customize</strong></p>
+          <div class="customize-row">
+            <div class="upload-group">
+              <label for="bloopNameInput">Initial:</label>
+              <input type="text" id="bloopNameInput" placeholder="Bloop" maxlength="20">
+            </div>
+            <div class="upload-group">
+              <label for="bloopUpload">Image:</label>
+              <input type="file" id="bloopUpload" accept="image/*">
+            </div>
+          </div>
+          <div class="customize-row">
+            <div class="upload-group">
+              <label for="fishNameInput">Food:</label>
+              <input type="text" id="fishNameInput" placeholder="Fish" maxlength="20">
+            </div>
+            <div class="upload-group">
+              <label for="fishUpload">Image:</label>
+              <input type="file" id="fishUpload" accept="image/*">
+            </div>
+          </div>
+          <div class="customize-row">
+            <div class="upload-group">
+              <label for="majaNameInput">Upgrade:</label>
+              <input type="text" id="majaNameInput" placeholder="El Gran Maja" maxlength="20">
+            </div>
+            <div class="upload-group">
+              <label for="elgrmahaUpload">Image:</label>
+              <input type="file" id="elgrmahaUpload" accept="image/*">
+            </div>
+          </div>
+          <div class="customize-row">
+            <div class="upload-group">
+              <label for="leviathanNameInput">Special:</label>
+              <input type="text" id="leviathanNameInput" placeholder="Leviathan" maxlength="20">
+            </div>
+            <div class="upload-group">
+              <label for="leviathanUpload">Image:</label>
+              <input type="file" id="leviathanUpload" accept="image/*">
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
